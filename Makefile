@@ -21,5 +21,5 @@ get-aks-creds:
 	./scripts/get-aks-creds.sh
 
 .PHONY: install-helm-chart
-install-helm-chart:
+install-helm-chart: install-helm
 	./scripts/install-helm-chart.sh
