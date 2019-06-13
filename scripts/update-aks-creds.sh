@@ -6,6 +6,8 @@ source .env
 
 # Source: https://docs.microsoft.com/en-us/azure/aks/update-credentials
 
+# az ad sp create-for-rbac --skip-assignment
+
 SP_ID=$(az aks show --subscription $AZURE_SUBSCR --resource-group $AZURE_RG --name $AKS_NAME --query servicePrincipalProfile.clientId -o tsv)
 
 SP_SECRET=$(az ad sp credential reset --name $SP_ID --query password -o tsv)
